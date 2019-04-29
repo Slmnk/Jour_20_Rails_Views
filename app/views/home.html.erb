@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+
+  </header>
+<div class="d-flex flex-column align-items-center mt-3 text-center">
+  Welcome <%= params[:first_name]%>
+  <form action="/welcome/<%= params[:first_name]%>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <p>What ur name bud'?</p>
+    <input type="text" name="first_name">
+    <input type="submit" name="envoyer">
+  </form>
+</div>
+
+</body>
+
+</html>
